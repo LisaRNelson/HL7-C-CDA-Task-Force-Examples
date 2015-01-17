@@ -4,9 +4,18 @@
 	<code code="10157-6" codeSystem="2.16.840.1.113883.6.1" displayName="Family History"/>
 	<title>Family History</title>
 	<text>
-		<paragraph><content ID="FH1rel">Dad</content> died of a <content ID="FH1prob1">stroke</content>, 
-			<content ID="FH1prob1age">age 72</content>, January 2003. He also had <content ID="FH1prob2">high blood pressure</content>.</paragraph>
-		<paragraph><content ID="FH2rel">Mom</content> is living with <content ID="FH2prob">no known problems</content></paragraph>
+		<paragraph>
+		<content ID="FH1rel">Dad</content> 
+		<content ID="FH1prob1">
+		In January, 2003 he had a <content ID="FH1CauseOfDeath">stroke</content> and 
+		<content ID="FH1relDeceasedStatus">died</content>. 
+		He was <content ID="FH1prob1Age">age 72</content>.
+		</content>
+		He also had <content ID="FH1prob2">high blood pressure</content>.
+		</paragraph>
+		<paragraph>
+		<content ID="FH2rel">Mom</content>
+		<content ID="FH2relDeceasedStatus">Living</content> with <content ID="FH2prob1">no known problems</content></paragraph>
 	</text>
 	<!-- Father died of a stroke -->
 	<entry>
@@ -47,6 +56,7 @@
 					<!-- Unique ID for this individual observation -->
 					<id root="02faa204-db62-4610-864f-cb50b650d0fa" />
 					<code code="75315-2" codeSystem="2.16.840.1.113883.6.1" displayName="Condition Family Member" />
+					<text><reference value="#FH1prob1"></reference></text>
 					<statusCode code="completed"/>
 					<!-- Date of the stroke -->
 					<effectiveTime value="200301" />
@@ -77,6 +87,9 @@
 						<observation classCode="OBS" moodCode="EVN">
 							<templateId root="2.16.840.1.113883.10.20.22.4.47"/>
 							<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" />
+							<text>
+								<reference value="#FH1relDeceasedStatus"/>
+							</text>
 							<statusCode code="completed"/>
 							<value xsi:type="CD" code="419099009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Dead"/>
 						</observation>
@@ -145,7 +158,7 @@
 					<id root="05faa204-db62-4610-864f-cb50b650d0fa" />
 					<code code="75315-2" codeSystem="2.16.840.1.113883.6.1" displayName="Condition Family Member" />
 					<text>
-						<reference value="#FH2prob"/>
+						<reference value="#FH2prob1"/>
 					</text>
 					<statusCode code="completed"/>
 					<effectiveTime nullFlavor="NI" />
